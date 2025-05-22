@@ -1,38 +1,65 @@
-# sv
+# Unicorn Studio SvelteKit Starter
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A modern SvelteKit starter template for previewing [Unicorn Studio](https://github.com/hiunicornstudio/unicornstudio.js) animation projects.
 
-## Creating a project
+- **Live repo:** [github.com/dixiekun/unicorn-studio-sveltekit-starter](https://github.com/dixiekun/unicorn-studio-sveltekit-starter)
+- **Powered by:** [SvelteKit](https://kit.svelte.dev/) & [UnicornStudio.js](https://github.com/hiunicornstudio/unicornstudio.js)
 
-If you're seeing this, you've probably already done this step. Congrats!
+---
 
-```bash
-# create a new project in the current directory
-npx sv create
+## Features
+- Plug-and-play preview for your Unicorn Studio exported scenes
+- Uses UnicornStudio.js via CDN for zero-config embedding
+- Example scene included: `De_becker_code_hero.json`
+- Clean, responsive, and accessible UI
+- Easily extensible for multiple scenes or a gallery
 
-# create a new project in my-app
-npx sv create my-app
-```
+---
 
-## Developing
+## Getting Started
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+1. **Clone this repo:**
+   ```sh
+   git clone https://github.com/dixiekun/unicorn-studio-sveltekit-starter.git
+   cd unicorn-studio-sveltekit-starter
+   ```
+2. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+3. **Run the dev server:**
+   ```sh
+   npm run dev -- --open
+   ```
+4. **Preview your Unicorn Studio scene!**
+   - The sample scene is loaded from `/static/unicorn-studio/De_becker_code_hero.json`.
+   - Open [http://localhost:5173/](http://localhost:5173/) to view.
 
-```bash
-npm run dev
+---
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Adding Your Own Scenes
+1. **Export your scene** from [Unicorn Studio](https://unicorn.studio/) as a JSON file.
+2. **Place the file** in `static/unicorn-studio/` (e.g., `static/unicorn-studio/my_scene.json`).
+3. **Edit `src/routes/+page.svelte`** to reference your new file:
+   ```js
+   filePath: '/unicorn-studio/my_scene.json',
+   ```
+4. **Restart the dev server** if needed, and your new scene will appear!
 
-## Building
+---
 
-To create a production version of your app:
+## Project Structure
+- `src/routes/+page.svelte` — Main page, loads and displays the Unicorn Studio scene
+- `static/unicorn-studio/` — Place your exported scene JSON files here
+- `project-overview.md` — Project documentation
 
-```bash
-npm run build
-```
+---
 
-You can preview the production build with `npm run preview`.
+## Credits
+- [Unicorn Studio](https://unicorn.studio/) for the animation platform and SDK
+- [SvelteKit](https://kit.svelte.dev/) for the web framework
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+---
+
+## License
+This starter is provided for personal and educational use. See [Unicorn Studio's license](https://github.com/hiunicornstudio/unicornstudio.js/blob/v1.4.20/README.md) for SDK usage terms.
